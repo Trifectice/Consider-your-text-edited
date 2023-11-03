@@ -1,9 +1,9 @@
 {
-  "name": "Your App Name",
-  "short_name": "App",
+  "name": "Just another text editor",
+  "short_name": "J.A.T.E",
   "orientation": "portrait",
   "display": "standalone",
   "start_url": ".",
-  "description": "Your App Description",
+  "description": "It is a text editor that can be used in the browser",
   "background_color": "#ffffff"
 }

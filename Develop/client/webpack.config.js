@@ -8,7 +8,7 @@ module.exports = () => {
     mode: 'development',
     entry: {
       main: './src/js/index.js',
-      install: './src/js/install.js',
+      install: './src/js/install.js'
     },
     output: {
       filename: '[name].bundle.js',
@@ -16,20 +16,25 @@ module.exports = () => {
     },
     plugins: [
       new HtmlWebpackPlugin({
-        template: './index.html',
+        template: './src/index.html',
+        filename: 'index.html'
       }),
       new WebpackPwaManifest({
         name: 'Your App Name',
         short_name: 'App',
         description: 'Your App Description',
         background_color: '#ffffff',
-        crossorigin: 'use-credentials',
+        icons: [
+          {
+            src: path.resolve('src/assets/icons/icon.png'),
+            sizes: [96, 128, 192, 256, 384, 512]
+          }
+        ]
       }),
       new InjectManifest({
-        swSrc: './src-sw.js',
-      }),
+        swSrc: './src/src-sw.js',
+      })
     ],
-
     module: {
       rules: [
         {
